@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noor Collection</title>
+  <style>
+    /* 🎨 Global Styling */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #FFD54F, #FF6F91);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      color: #fffde7;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fffde7;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      color: #FF6F91;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 10px 0 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #FF6F91;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #FFD54F;
+      color: #333;
+    }
+
+    /* Products Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      background: white;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      color: #FF6F91;
+      font-size: 18px;
+    }
+
+    .product-card p {
+      margin: 5px 0;
+    }
+
+    /* Contact Page */
+    .contact {
+      padding: 40px;
+      background: #fffde7;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #FF6F91;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #FF6F91;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #FF6F91;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        display: none;
+        padding: 10px;
+      }
+
+      nav ul.show {
+        display: block;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        cursor: pointer;
+        color: white;
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Noor Collection</h1>
+    <div class="menu-toggle">☰</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>Chic • Comfy • Classy</h2>
+    <p>Trendy & Comfortable apparel for your chic style ✨</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Yellow Dress">
+      <h3>Yellow Dress</h3>
+      <p>Size: Free (42)</p>
+      <p>₹1400 + Free Shipping</p>
+      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Coord Set">
+      <h3>Coord Set</h3>
+      <p>Size: 42</p>
+      <p>₹1400 + Free Shipping</p>
+      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Top">
+      <h3>Top (Black & Pink)</h3>
+      <p>Size: Free (46)</p>
+      <p>₹1300 + Free Shipping</p>
+      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Legging">
+      <h3>Legging</h3>
+      <p>Waist: 34</p>
+      <p>₹800 + Free Shipping</p>
+      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Delhi, India</p>
+    <p>💌 DM us on Instagram to order</p>
+    <p>💳 Payments via Paytm, GPay, Bank Transfer</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Noor Collection | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Mobile Menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
