@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noor Collection</title>
   <style>
+    
     /* 🎨 Global Styling */
     body {
       margin: 0;
@@ -86,37 +87,65 @@
     /* Products Grid */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      padding: 40px;
+      padding: 20px;
     }
 
-    .product-card {
-      border: 1px solid #eee;
+    .product {
+      background: #fff;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 15px;
       text-align: center;
-      background: white;
-      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .product-card:hover {
-      transform: scale(1.05);
-    }
-
-    .product-card img {
+    .product-image-container {
       width: 100%;
+      height: 400px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       border-radius: 8px;
     }
-
-    .product-card h3 {
-      color: #FF6F91;
-      font-size: 18px;
+    
+    /* Price Styling */
+    .price del {
+        color: #999;
+        font-size: 16px;
+        margin-right: 10px;
     }
-
-    .product-card p {
-      margin: 5px 0;
+    
+    .price .sale-price {
+        color: #FF6F91;
+        font-size: 20px;
+        font-weight: bold;
     }
+    
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.price .sale-price:hover {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
 
     /* Contact Page */
     .contact {
@@ -163,11 +192,67 @@
         font-size: 22px;
       }
     }
+    /* Testimonials Section Styling */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #fffde7; /* Light background to differentiate */
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #FF6F91;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for testimonials */
+    gap: 30px;
+    max-width: 1200px; /* Max width for the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex; /* Use flex for internal layout */
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px; /* Ensure cards have a minimum height */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows paragraph to take available space */
+}
+
+.testimonial-card h4 {
+    color: #FF6F91;
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.testimonial-card .date {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Noor Collection</h1>
     <div class="menu-toggle">☰</div>
@@ -180,46 +265,176 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero" id="home">
     <h2>Chic • Comfy • Classy</h2>
     <p>Trendy & Comfortable apparel for your chic style ✨</p>
     <a href="#products" class="btn">Shop Now</a>
   </section>
 
-  <!-- Products -->
   <section class="products" id="products">
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x400" alt="Yellow Dress">
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/3.jpeg" alt="Yellow Dress">
+      </div>
       <h3>Yellow Dress</h3>
-      <p>Size: Free (42)</p>
-      <p>₹1400 + Free Shipping</p>
-      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x400" alt="Coord Set">
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/22.jpeg" alt="Coordset">
+      </div>
       <h3>Coord Set</h3>
-      <p>Size: 42</p>
-      <p>₹1400 + Free Shipping</p>
-      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x400" alt="Top">
-      <h3>Top (Black & Pink)</h3>
-      <p>Size: Free (46)</p>
-      <p>₹1300 + Free Shipping</p>
-      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/33.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x400" alt="Legging">
-      <h3>Legging</h3>
-      <p>Waist: 34</p>
-      <p>₹800 + Free Shipping</p>
-      <a href="https://www.instagram.com/noor_collection.store?igsh=NTA0cTV2MGF3NTgw&utm_source=qr" class="btn">DM to Order</a>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/75e50eee-dde2-4095-b79f-b28296979330.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/485cba4f-98dc-42c3-8114-c228acdf6db0.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/b7d11b3a-9c1d-466e-a4dd-dcd40a842ff4.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/IMG_2614.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/IMG_2615.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/IMG_2616.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/IMG_2617.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image-container">
+        <img src="images/IMG_2618.jpeg" alt="Coordset">
+      </div>
+      <h3>Coord Set</h3>
+      <p class="price">
+        <del>₹2500</del>
+        <span class="sale-price">₹1400</span> (Free Shipping)
+      </p>
+      <a href="https://www.instagram.com/noor_collection.store" target="_blank" class="btn">DM to Order</a>
     </div>
   </section>
+</section> ```
 
-  <!-- Contact -->
+<section class="testimonials" id="testimonials">
+    <h2>हमारे ग्राहकों की बातें <br> (Customer Testimonials)</h2>
+
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <p>"Bohot hi shandaar collection hai! Clothes are so comfy and stylish. Delivery bhi bohot fast thi. Zaroor fir se khareedungi!"</p>
+            <h4>- प्रिया शर्मा (Priya Sharma)</h4>
+            <p class="date">22 May 2024</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"Awesome designs and quality is superb! This dress is my new favorite. Bahut elegant lag raha hai, loving it. Highly recommend!"</p>
+            <h4>- अलीशा ख़ान (Alisha Khan)</h4>
+            <p class="date">18 May 2024</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"Product jaisa dikhaya tha, waisa hi mila. Quality bohot acchi hai and fitting bhi perfect aayi. Best shopping experience ever!"</p>
+            <h4>- खुसी वर्मा (Kushi Verma)</h4>
+            <p class="date">15 May 2024</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"Totally loved the dress! The fabric is so soft. Plus, free shipping is a big bonus. Will definitely be a regular customer, and I am telling all my friends."</p>
+            <h4>- सिमरन कौर (Simran Kaur)</h4>
+            <p class="date">10 May 2024</p>
+        </div>
+    </div>
+</section>
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>📍 Delhi, India</p>
@@ -227,7 +442,6 @@
     <p>💳 Payments via Paytm, GPay, Bank Transfer</p>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Noor Collection | All Rights Reserved</p>
   </footer>
